@@ -9,13 +9,13 @@ class Person {
       this.gender = basicInfo.gender;
       this.catchPhrase = basicInfo.catchPhrase;
     }
-    //methods
+    //METHOD
     speak() {
       return `Hello! my name is ${this.name}, I'm from ${this.location}. My favorite catchphrase is "${this.catchPhrase}".`;
     }
-}//parent
+}//PARENT
   
-  //INSTRUCTOR
+//INSTRUCTOR
 class Instructor extends Person{
     constructor(instructorStuff) {
       super(instructorStuff)
@@ -23,15 +23,16 @@ class Instructor extends Person{
       this.faveLanguage = instructorStuff.faveLanguage;
       this.subject = instructorStuff.subject;
     }
-    //methods
+    //METHODS
     demo() {
       return `Today we are learning about ${this.subject}.`;
     }
     grade () {
       return `${beepulon.name} recieved a perfect score on ${this.subject}!`;
     }
-}//child
-  
+}//CHILD
+
+//STUDENT  
 class Student extends Person{
     constructor(extra) {
       super(extra)
@@ -41,7 +42,7 @@ class Student extends Person{
       this.faveSubjects = extra.faveSubjects;
       this.subject = extra.subject;
     }
-    //methods
+    //METHODS
     listSubjects () {
       return `Before lambda, I studdied ${this.faveSubjects}.`;
     }
@@ -51,23 +52,26 @@ class Student extends Person{
     sprintChallenge() {
       return `${this.name} has begun the Spring Challenge on ${this.subject}`;
     }
-}//child
+}//GRANDCHILD
   
+//PROJECT MANAGER
 class PM extends Instructor{
     constructor(pm) {
       super(pm)
       this.gradClassName = pm.gradClassName;
       this.faveInstructor = pm.faveInstructor;
     }
-    //methods
+    //METHODS
     standup() {
       return `${this.name} announces to Web18: @channel standy times!​​​​​`;
     }
     debugsCode() {
-      return `${this.name} debugs ${beepulon.name} code on ${this.subject}`;
+      return `${this.name} debugs ${beepulon.name}'s code on ${this.subject}`;
     }
-}//child
+}//GREAT GRANDCHILD
   
+  
+//PERSON
 const max = new Person ({
     name: 'Max',
     location: 'Texas',
@@ -78,6 +82,8 @@ const max = new Person ({
     catchPhrase: 'Aint no thing like me, except me! - Rocket the Raccoon'
 });
   
+  
+//INSTRUCTOR
 const fred = new Instructor({
     name: 'Fred',
     location: 'Bedrock',
@@ -89,6 +95,8 @@ const fred = new Instructor({
     subject: 'Pseudo Classical prototypal Inheritance'
 });
   
+  
+//STUDENT
 const beepulon = new Student ({
     name: 'Beepulon',
     location: 'Mars',
@@ -104,6 +112,8 @@ const beepulon = new Student ({
     subject: 'Pseudo Classical prototypal Inheritance'
 });
   
+  
+//PROJECT MANAGER
 const projectManager = new PM ({
     name: 'Craig',
     location: 'Bristol',
@@ -115,14 +125,26 @@ const projectManager = new PM ({
     faveInstructor: 'Sean'
 });
   
+  
+//CONSOLE LOGS
+console.log("PERSON");
 console.log(max.speak());
+console.log("--------------------");
+  
+console.log("INSTRUCTOR");
 console.log(fred.speak());
 console.log(fred.demo());
 console.log(fred.grade());
+console.log("--------------------");
+  
+console.log("STUDENT");
 console.log(beepulon.speak());
 console.log(beepulon.listSubjects());
 console.log(beepulon.prAssignments());
 console.log(beepulon.sprintChallenge());
+console.log("--------------------");
+  
+console.log("PROJECT MANAGER");
 console.log(projectManager.speak());
 console.log(projectManager.standup());
 console.log(projectManager.debugsCode());
